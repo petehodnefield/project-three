@@ -4,10 +4,10 @@ const typeDefs = gql `
     type User {
         _id: ID
         username: String
-
-    type Query {
-        users: User
     }
+    
+    type Query {
+        users: [User]
     }
 `
 
