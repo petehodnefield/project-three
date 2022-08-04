@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site for DEI Calendar" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <title>DEI Calendar</title>
+</head>
+
+<body>
+  <button class="m-0 btn-generic" type="submit">+ Add / - Remove Event</button>
+  <!-- Event Long Card -->
+  <form class="m-4 is-flex is-flex-direction-column is-align-items-center">
+    <!-- Date Detail Header -->
+    <div>
+      <h3>[Month]</h3>
+      <!-- Dates -->
+      <div>
+        <!-- Start Date -->
+        <div>
+          <h1>00</h1>
+          <h3>START</h3>
+        </div>
+        <!-- End Date -->
+        <div>
+          <h1>00</h1>
+          <h3>ENDS</h3>
+        </div>
+      </div>
+      <!-- People Interested -->
+      <p>53 People are Participating</p>
+      <p>5 Colleagues are Interested!</p>
+    </div>
+    <!-- Event Detail Body -->
+    <div class="card-body">
+      <h1>[Culture Event / Holiday Name]</h1>
+      <h3>[Culture Tag]</h3>
+      <img src="/api/pets/images/{{post.pet.photo}}" alt="HTML5 Icon" style="width:250px;height:250px;">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum mattis ullamcorper velit sed
+        ullamcorper.</p>
+    </div>
+  </form>
+
+  <!-- Event Short Card -->
+  <form class="m-4 is-flex is-flex-direction-column is-align-items-center">
+    <!-- Date Detail Header -->
+    <div>
+      <h1>00</h1>
+      <h3>[Month]</h3>
+    </div>
+    <!-- Event Detail Body -->
+    <div class="card-body">
+      <h1>[Culture Event / Holiday Name]</h1>
+      <h3>[Culture Tag]</h3>
+      <img src="/api/pets/images/{{post.pet.photo}}" alt="HTML5 Icon" style="width:250px;height:250px;">
+      <!-- People Interested -->
+      <p>53 People are Participating</p>
+      <p>5 Colleagues are Interested!</p>
+    </div>
+    <button class="m-0 btn-generic" type="submit">+ Add / - Remove Event</button>
+  </form>
+
+
+  <!-- LOG IN FORM -->
+  <form class="m-4 is-flex is-flex-direction-column is-align-items-center login-form" id="#login-form">
+    <div class="form-header">
+      <h2>LOGIN</h2>
+    </div>
+    <div class="m-3">
+      <label>Username</label>
+      <input type="text" placeholder="John1234" id="username-login">
+      <label>Password</label>
+      <input type="password" placeholder="*******" id="password-login">
+    </div>
+    <button class="m-0 btn-generic" type="submit">Log In</button>
+  </form>
+
+  <!-- SIGN UP FORM -->
+  <form class="m-4 is-flex is-flex-direction-column is-align-items-center login-form" id="#sign-up">
+    <div class="form-header">
+      <h2>SIGN UP</h2>
+    </div>
+    <div class="m-3">
+      <label>Full Name</label>
+      <input type="text" placeholder="John H. Smith" id="fullname-signup">
+      <label>Username</label>
+      <input type="text" placeholder="John1234" id="username-signup">
+      <label>Email Address</label>
+      <input type="email" placeholder="john1234@example.com" id="email-signup">
+      <label>Password</label>
+      <input type="password" placeholder="*******" id="password-signup">
+    </div>
+    <button class="m-0 btn-generic" type="submit">Sign Up!</button>
+  </form>
+
+
+  </div>
+
+</body>
+
+</html>
