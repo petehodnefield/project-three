@@ -1,4 +1,5 @@
 const User = require('./User');
+const Culture = require('./Culture')
 
 
-module.exports = { User };
+module.exports = { User, Culture };
