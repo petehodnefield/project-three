@@ -20,16 +20,16 @@ const typeDefs = gql `
         name: String
         description: String
         date: String
+        culture: [Culture]
     }
 
-      type Reaction {
+    type Reaction {
         _id: ID
         reactionBody: String
         createdAt: String
         username: String
-      }  
+    }  
     
-
     type Auth {
         token: ID
         user: User
@@ -42,6 +42,7 @@ const typeDefs = gql `
         events: [Event]
         event(_id: ID!): Event
         reactions: [Reaction]
+        cultures: [Culture]
     }
 
     type Mutation {
