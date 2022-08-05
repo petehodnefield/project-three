@@ -10,12 +10,12 @@ const typeDefs = gql `
         _id: ID
         name: String
         description: String
-        date: Int
+        date: String
       }
 
     type Query {
         users: User
-        events(name: String): [Event]
+        events: [Event]
         event(_id: ID!): Event
     }
 `

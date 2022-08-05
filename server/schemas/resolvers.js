@@ -6,21 +6,11 @@ const resolvers = {
         users: async () => {
             return await User.find()
         },
-        events: async (parent, { name }) => {
-        const params = {};
-        // add back once category is a model
-        // if (category) {
-        //     params.category = category;
-        // }
-        if (name) {
-            params.name = {
-            $regex: name
-            };
-        }
-        return await Event.find(params).populate();
+        events: async () => {
+        return await Event.find()
         },
         event: async (parent, { _id }) => {
-            return await Event.findById(_id).populate()
+            return await Event.findById(_id)
         }
     }
 };

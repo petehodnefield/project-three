@@ -14,13 +14,6 @@ const eventSchema = new Schema({
   date: {
     type: Date
   }
-  //add category once model is created
-//   category: {
-//     type: Schema.Types.ObjectId,
-//     ref: 'Category',
-//     required: true
-//   }
-  //image - future development option
 });
 
 const Event = mongoose.model('Event', eventSchema);

@@ -25,7 +25,7 @@ db.once('open', async () => {
         },
         {
             name: 'asdfas',
-            description: 'Celesading MLK Jr. who was a revered American civil rights movement leader.',
+            description: 'Celesadindah ;sdj flkdsa lk;s dlkdsflksajksf sda.',
             date: '04/11/2023',
             
         }
