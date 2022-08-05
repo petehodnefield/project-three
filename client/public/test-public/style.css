@@ -87,6 +87,7 @@ label {
 }
 .short-card {
   background-color: var(--primary-color);
+  border-radius: 10px 10px 0px 0px;
 }
 
 .short-card-width {
