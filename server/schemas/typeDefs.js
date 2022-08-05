@@ -5,9 +5,15 @@ const typeDefs = gql `
         _id: ID
         username: String
     }
+
+    type Culture {
+        _id: ID
+        cultureName: String
+    }
     
     type Query {
         users: [User]
+        culture(username: String) :[Culture]
     }
 `
 
