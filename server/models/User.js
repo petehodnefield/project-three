@@ -26,12 +26,12 @@ const userSchema = new Schema({
             required: true,
             trim: true
         },
-        // reactions: [
-        //     {
-        //         type: Schema.Types.ObjectId,
-        //         ref: 'Reactions'
-        //     }
-        // ]
+        reactions: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Reaction'
+            }
+        ]
     },
     {
         toJSON: {

@@ -24,8 +24,9 @@ db.once('open', async () => {
             name: 'Martin Luther King Jr. Day',
             description: 'Celebrating and honoring MLK Jr. who was a revered American civil rights movement leader.',
             date: '01/17/2023',
+
             cultureName: 'African American'
-        
+
         },
         {
             name: 'Orthodox New Year',
