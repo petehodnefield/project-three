@@ -16,95 +16,105 @@
 </head>
 
 <body>
-  <button class="m-0 btn-generic" type="submit">+ Add / - Remove Event</button>
-  <!-- Event Long Card -->
-  <form class="m-4 is-flex is-flex-direction-column is-align-items-center">
-    <!-- Date Detail Header -->
-    <div>
-      <h3>[Month]</h3>
-      <!-- Dates -->
-      <div>
-        <!-- Start Date -->
-        <div>
-          <h1>00</h1>
-          <h3>START</h3>
+  <main class="container is-flex is-flex-direction-column is-align-items-center">
+
+    <!-- Add Event Button -->
+    <button class="m-4 btn-generic " type="submit">+ Add / - Remove Event</button>
+
+    <!-- Event Long Card -->
+    <form class="m-4 columns">
+      <!-- Date Detail Header -->
+      <div class="is-flex is-flex-direction-column is-align-items-center column is-one-third long-card-header">
+        <h3 class="center big">DATES</h3>
+        <!-- Dates -->
+        <div class="columns full-width dates">
+          <!-- Start Date -->
+          <div>
+            <h3>START</h3>
+            <h1 class="p-0 white big">01</h1>
+            <h3 class="center">JUNE</h3>
+          </div>
+          <!-- End Date -->
+          <div>
+            <h3>ENDS</h3>
+            <h1 class="p-0 white big">06</h1>
+            <h3 class="center">JUNE</h3>
+          </div>
         </div>
-        <!-- End Date -->
+        <!-- People Interested -->
+        <p class="white">53 People are Participating</p>
+        <p class="white">5 Colleagues are Interested!</p>
+      </div>
+      <!-- Event Detail Body -->
+      <div class="is-flex is-flex-direction-column is-align-items-center column">
+        <h1>[Culture Event Name]</h1>
+        <h3 class="m-2 culture-tag">[Culture Tag]</h3>
+        <img class="m-3" src="https://via.placeholder.com/250" alt="HTML5 Icon" style="width:250px;height:250px;">
+        <p class="m-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore
+          magna aliqua. Egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum mattis ullamcorper velit sed
+          ullamcorper.</p>
+      </div>
+    </form>
+
+    <!-- Event Short Card -->
+    <form class="m-4 is-flex is-flex-direction-column is-align-items-center short-card-width">
+      
+      <div class="short-card">
+        <!-- Date Detail Header -->
         <div>
-          <h1>00</h1>
-          <h3>ENDS</h3>
+          <h1 class="p-0 big white">01</h1>
+          <h3 class="big">JUNE</h3>
+        </div>
+        <!-- Event Detail Body -->
+        <div class="m-4 is-flex is-flex-direction-column is-align-items-center">
+          <h1 class="white">[Culture Event Name]</h1>
+          <h3 class="m-2 culture-tag">[Culture Tag]</h3>
+          <img class="m-3" src="https://via.placeholder.com/250" alt="HTML5 Icon" style="width:250px;height:250px;">
+          <!-- People Interested -->
+          <p class="white">53 People are Participating</p>
+          <p class="white">5 Colleagues are Interested!</p>
         </div>
       </div>
-      <!-- People Interested -->
-      <p>53 People are Participating</p>
-      <p>5 Colleagues are Interested!</p>
-    </div>
-    <!-- Event Detail Body -->
-    <div class="card-body">
-      <h1>[Culture Event / Holiday Name]</h1>
-      <h3>[Culture Tag]</h3>
-      <img src="/api/pets/images/{{post.pet.photo}}" alt="HTML5 Icon" style="width:250px;height:250px;">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum mattis ullamcorper velit sed
-        ullamcorper.</p>
-    </div>
-  </form>
-
-  <!-- Event Short Card -->
-  <form class="m-4 is-flex is-flex-direction-column is-align-items-center">
-    <!-- Date Detail Header -->
-    <div>
-      <h1>00</h1>
-      <h3>[Month]</h3>
-    </div>
-    <!-- Event Detail Body -->
-    <div class="card-body">
-      <h1>[Culture Event / Holiday Name]</h1>
-      <h3>[Culture Tag]</h3>
-      <img src="/api/pets/images/{{post.pet.photo}}" alt="HTML5 Icon" style="width:250px;height:250px;">
-      <!-- People Interested -->
-      <p>53 People are Participating</p>
-      <p>5 Colleagues are Interested!</p>
-    </div>
-    <button class="m-0 btn-generic" type="submit">+ Add / - Remove Event</button>
-  </form>
+      <button class="m-0 full-width no-round" type="submit">+ Add / - Remove Event</button>
+    </form>
 
 
-  <!-- LOG IN FORM -->
-  <form class="m-4 is-flex is-flex-direction-column is-align-items-center login-form" id="#login-form">
-    <div class="form-header">
-      <h2>LOGIN</h2>
-    </div>
-    <div class="m-3">
-      <label>Username</label>
-      <input type="text" placeholder="John1234" id="username-login">
-      <label>Password</label>
-      <input type="password" placeholder="*******" id="password-login">
-    </div>
-    <button class="m-0 btn-generic" type="submit">Log In</button>
-  </form>
+    <!-- LOG IN FORM -->
+    <form class="m-4 is-flex is-flex-direction-column is-align-items-center form-login" id="#login-form">
+      <div class="">
+        <h1>LOGIN</h1>
+      </div>
+      <p class="m-1 error">[error message]</p>
+      <div class="m-3">
+        <label>Username</label>
+        <input type="text" placeholder="John1234" id="username-login">
+        <label>Password</label>
+        <input type="password" placeholder="*******" id="password-login">
+      </div>
+      <button class="m-0 mt-4 full-width no-round" type="submit">Log In</button>
+    </form>
 
-  <!-- SIGN UP FORM -->
-  <form class="m-4 is-flex is-flex-direction-column is-align-items-center login-form" id="#sign-up">
-    <div class="form-header">
-      <h2>SIGN UP</h2>
-    </div>
-    <div class="m-3">
-      <label>Full Name</label>
-      <input type="text" placeholder="John H. Smith" id="fullname-signup">
-      <label>Username</label>
-      <input type="text" placeholder="John1234" id="username-signup">
-      <label>Email Address</label>
-      <input type="email" placeholder="john1234@example.com" id="email-signup">
-      <label>Password</label>
-      <input type="password" placeholder="*******" id="password-signup">
-    </div>
-    <button class="m-0 btn-generic" type="submit">Sign Up!</button>
-  </form>
+    <!-- SIGN UP FORM -->
+    <form class="m-4 is-flex is-flex-direction-column is-align-items-center form-login" id="#sign-up">
+      <div class="">
+        <h1>SIGN UP</h1>
+      </div>
+      <p class="m-1 error">[error message]</p>
+      <div class="m-3">
+        <label>Full Name</label>
+        <input type="text" placeholder="John H. Smith" id="fullname-signup">
+        <label>Username</label>
+        <input type="text" placeholder="John1234" id="username-signup">
+        <label>Email Address</label>
+        <input type="email" placeholder="john1234@example.com" id="email-signup">
+        <label>Password</label>
+        <input type="password" placeholder="*******" id="password-signup">
+      </div>
+      <button class="m-0 mt-4 full-width no-round" type="submit">Sign Up!</button>
+    </form>
 
-
-  </div>
-
+  </main>
 </body>
 
 </html>

@@ -19,7 +19,7 @@
 }
 
 body {
-  background: white;
+  background: gray;
   margin: 0;
 }
 
@@ -33,16 +33,16 @@ form {
 
 label {
   font-weight: bold;
-  color: var(--quinary-color);
 }
 
 
 h1 {
   border-radius: 8px 15px;
   font-weight: bold;
+  text-align: center;
   font-size: var(--font-size-lg);
   padding: 10px;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 h2 {
@@ -56,7 +56,7 @@ h3 {
   color: var(--secondary-color);
   font-size: var(--font-size-md);
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   width: 100%;
   background: var(--quinary-color);
 }
@@ -75,24 +75,75 @@ input,
 textarea,
 label {
   font-size: var(--font-size-sm);
+  color: var(--primary-color);
 }
 
+.full-width {
+  width: 100%;
+}
+.long-card-header {
+  background-color: var(--primary-color);
+  border-radius: 10px 0px 0px 10px;
+}
+.short-card {
+  background-color: var(--primary-color);
+}
+
+.short-card-width {
+  max-width: 500px;
+}
+
+
+.short-card:hover {
+  background: var(--quaternary-color);
+  top: -2px;
+  cursor: pointer;
+}
+
+.form-login {
+  max-width: 600px;
+}
+
+.culture-tag {
+  font-style: italic;
+}
+
+.white {
+  color: white;
+}
+
+.big {
+  font-size: 72px;
+}
+
+.dates {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.error {
+  color: var(--quaternary-color);
+  font-weight: bold;
+}
 /* Button Styling */
 button {
   outline: none;
   border: none;
-  margin: 3px;
   padding: 10px 15px;
   border-radius: 8px;
-  background: var(--secondary-color);
-  color: var(--quinary-color);
+  background: var(--quaternary-color);
+  color: var(--tertiary-color);
   font-size: var(--font-size-md);
   cursor: pointer;
   font-weight: bold;
 }
 
 button:hover {
-  background: var(--primary-color);
-  color: var(--secondary-color);
+  background: var(--secondary-color);
+  color: var(--primary-color);
   top: -2px;
+}
+
+.no-round {
+  border-radius: 0px 0px 8px 8px;
 }
