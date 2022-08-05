@@ -7,6 +7,7 @@ const typeDefs = gql `
         password: String!
         email: String!,
         organization: String!
+        reactions: [Reaction]!
     }
 
     type Culture {
@@ -19,7 +20,15 @@ const typeDefs = gql `
         name: String
         description: String
         date: String
-      }
+    }
+
+      type Reaction {
+        _id: ID
+        reactionBody: String
+        createdAt: String
+        username: String
+      }  
+    
 
     type Auth {
         token: ID
@@ -32,19 +41,16 @@ const typeDefs = gql `
         user(username: String!): User
         events: [Event]
         event(_id: ID!): Event
+        reactions: [Reaction]
     }
 
     type Mutation {
         addUser(username: String!, email: String!, password: String!, organization: String!): Auth
         login(email: String!, password: String!): Auth
+        addReaction(reactionBody: String!, userId: String!, username: String!): Reaction
 
     }
-    type Reaction {
-        _id: ID
-        reactionBody: String
-        createdAt: String
-        username: String
-      }
+
 `
 
 module.exports = typeDefs;
