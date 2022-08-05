@@ -7,11 +7,12 @@ db.once('open', async () => {
     await User.deleteMany({});
 
     await User.create([
-        {username: 'testuser1'},
-        {username: 'testuser2'},
-        {username: 'testuser3'},
-        {username: 'testuser4'},
-        {username: 'testuser5'}
+        {username: 'testuser1', password: "password", email: "example1@gmail.com", organization: "Apple"},
+        {username: 'testuser2', password: "password", email: "example2@gmail.com", organization: "Microsoft"},
+        {username: 'testuser3', password: "password", email: "example3@gmail.com", organization: "Apple"},
+        {username: 'testuser4', password: "password", email: "example4@gmail.com", organization: "Facebook"},
+        {username: 'testuser5', password: "password", email: "example5@gmail.com", organization: "Tesla"},
+
     ])
 
     console.log('users seeded');
