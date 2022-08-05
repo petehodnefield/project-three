@@ -25,6 +25,9 @@ const resolvers = {
         },
         reactions: async () => {
           return await Reaction.find()
+        },
+        cultures: async () => {
+          return await Culture.find()
         }
     },
     Mutation: {
@@ -51,19 +54,23 @@ const resolvers = {
       
             return { token, user };
           },
-            addReaction: async (parent, { userId, reactionBody, username}, context) => {
-        
-                const reaction = await Reaction.create({ reactionBody, username: username });
-            
-                await User.findByIdAndUpdate(
-                  { _id: userId },
-                  { $push: { reactions: reaction._id } },
-                  { new: true }
-                );
-            
-                return reaction;
+          addReaction: async (parent, { userId, reactionBody, username}, context) => {
+            // We will need to add context here once front end is working
+            // if (context.user) {
 
-            },
+            const reaction = await Reaction.create({ reactionBody, username: username });
+        
+            await User.findByIdAndUpdate(
+              { _id: userId },
+              { $push: { reactions: reaction._id } },
+              { new: true }
+            );
+            return reaction;
+
+          // }
+          // throw new AuthenticationError('You need to be logged in!');
+
+          },
          
     }
  
