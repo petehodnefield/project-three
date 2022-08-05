@@ -13,7 +13,14 @@ const typeDefs = gql `
         _id: ID
         cultureName: String
     }
-    
+   
+    type Event {
+        _id: ID
+        name: String
+        description: String
+        date: String
+      }
+
     type Auth {
         token: ID
         user: User
@@ -23,6 +30,8 @@ const typeDefs = gql `
         users: [User]
         culture(username: String) :[Culture]
         user(username: String!): User
+        events: [Event]
+        event(_id: ID!): Event
     }
 
     type Mutation {

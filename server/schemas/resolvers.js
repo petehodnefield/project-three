@@ -1,6 +1,6 @@
 // const { AuthenticationError } = require('apollo-server-express');
 
-const { User, Culture} = require('../models');
+const { User, Event, Culture} = require('../models');
 const {signToken} = require('../utils/auth')
 
 
@@ -15,7 +15,12 @@ const resolvers = {
             //   Uncomment after reactions model is added
             //   .populate('reactions')
           },
-        
+         events: async () => {
+                return await Event.find()
+         },
+         event: async (parent, { _id }) => {
+            return await Event.findById(_id)
+        }    
     },
     Mutation: {
         addUser: async (parent, args) => {
@@ -44,6 +49,7 @@ const resolvers = {
     }
  
 }
+
 
 
 module.exports = resolvers;
