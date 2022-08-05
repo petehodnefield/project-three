@@ -32,6 +32,12 @@ const typeDefs = gql `
         addUser(username: String!, email: String!, password: String!, organization: String!): Auth
         login(email: String!, password: String!): Auth
     }
+    type Reaction {
+        _id: ID
+        reactionBody: String
+        createdAt: String
+        username: String
+      }
 `
 
 module.exports = typeDefs;
