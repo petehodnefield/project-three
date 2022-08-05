@@ -26,9 +26,9 @@ const resolvers = {
         reactions: async () => {
           return await Reaction.find()
         },
-        cultures: async () => {
-          return await Culture.find()
-        }
+        // cultures: async () => {
+        //   return await Culture.find()
+        // }
     },
     Mutation: {
         addUser: async (parent, args) => {

@@ -20,7 +20,7 @@ const typeDefs = gql `
         name: String
         description: String
         date: String
-        culture: [Culture]
+        culture: String
     }
 
     type Reaction {
@@ -42,7 +42,6 @@ const typeDefs = gql `
         events: [Event]
         event(_id: ID!): Event
         reactions: [Reaction]
-        cultures: [Culture]
     }
 
     type Mutation {

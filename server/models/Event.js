@@ -12,14 +12,12 @@ const eventSchema = new Schema({
       type: String
     },
     date: {
-      type: Date
+      type: String
     },
-    culture: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Culture'
-      }
-    ]
+    culture: {
+      type: String,
+      required: true
+    }
   },
   {
     toJSON: {
