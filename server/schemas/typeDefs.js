@@ -8,6 +8,11 @@ const typeDefs = gql `
         email: String!,
         organization: String!
     }
+
+    type Culture {
+        _id: ID
+        cultureName: String
+    }
    
     type Event {
         _id: ID
@@ -15,7 +20,7 @@ const typeDefs = gql `
         description: String
         date: String
       }
-      
+
     type Auth {
         token: ID
         user: User
@@ -23,6 +28,7 @@ const typeDefs = gql `
 
     type Query {
         users: [User]
+        culture(username: String) :[Culture]
         user(username: String!): User
         events: [Event]
         event(_id: ID!): Event
@@ -31,6 +37,7 @@ const typeDefs = gql `
     type Mutation {
         addUser(username: String!, email: String!, password: String!, organization: String!): Auth
         login(email: String!, password: String!): Auth
+
     }
 `
 
