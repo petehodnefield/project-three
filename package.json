@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/petehodnefield/project-three/issues"
   },
-  "homepage": "https://github.com/petehodnefield/project-three#readme"
+  "homepage": "https://github.com/petehodnefield/project-three#readme",
+  "dependencies": {
+    "apollo-server-express": "^3.10.0",
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.1"
+  }
 }
