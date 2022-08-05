@@ -2,12 +2,12 @@ import React from "react";
 
 function SignUp() {
     return (
-        <form class="m-4 is-flex is-flex-direction-column is-align-items-center form-login" id="#sign-up">
-            <div class="">
+        <form className="m-4 is-flex is-flex-direction-column is-align-items-center form-login" id="#sign-up">
+            <div className="">
                 <h1>SIGN UP</h1>
             </div>
-            <p class="m-1 error">[error message]</p>
-            <div class="m-3">
+            <p className="m-1 error">[error message]</p>
+            <div className="m-3">
                 <label>Full Name</label>
                 <input type="text" placeholder="John H. Smith" id="fullname-signup"></input>
                 <label>Username</label>
@@ -17,7 +17,7 @@ function SignUp() {
                 <label>Password</label>
                 <input type="password" placeholder="*******" id="password-signup"></input>
             </div>
-            <button class="m-0 mt-4 full-width no-round" type="submit">Sign Up!</button>
+            <button className="m-0 mt-4 full-width no-round" type="submit">Sign Up!</button>
         </form>
     );
 }

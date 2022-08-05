@@ -1,28 +1,48 @@
 import React from "react";
 
-function Signup() {
+function LongCard() {
     return (
-        <form class="m-4 is-flex is-flex-direction-column is-align-items-center short-card-width">
+        <div className="container is-flex is-flex-direction-column is-align-items-center">
+            <button className="m-4 btn-generic " type="submit">+ Add / - Remove Event</button>
 
-            <div class="short-card">
-                {/* <!-- Date Detail Header --> */}
-                <div>
-                    <h1 class="p-0 big white">01</h1>
-                    <h3 class="big">JUNE</h3>
+            <form className="m-4 columns">
+
+                <div className="is-flex is-flex-direction-column is-align-items-center column is-one-third long-card-header">
+                    <h3 className="center big">DATES</h3>
+
+                    <div className="columns full-width dates">
+                        <div>
+                            <h3>START</h3>
+                            <h1 className="p-0 white big">01</h1>
+                            <h3 className="center">JUNE</h3>
+                        </div>
+
+                        <div>
+                            <h3>ENDS</h3>
+                            <h1 className="p-0 white big">06</h1>
+                            <h3 className="center">JUNE</h3>
+                        </div>
+                    </div>
+
+                    <p className="white">53 People are Participating</p>
+                    <p className="white">5 Colleagues are Interested!</p>
                 </div>
-                {/* <!-- Event Detail Body --> */}
-                <div class="m-4 is-flex is-flex-direction-column is-align-items-center">
-                    <h1 class="white">[Culture Event Name]</h1>
-                    <h3 class="m-2 culture-tag">[Culture Tag]</h3>
-                    <img class="m-3" src="https://via.placeholder.com/250" alt="HTML5 Icon" style="width:250px;height:250px;"></img>
-                    {/* <!-- People Interested --> */}
-                    <p class="white">53 People are Participating</p>
-                    <p class="white">5 Colleagues are Interested!</p>
+
+                <div className="is-flex is-flex-direction-column is-align-items-center column">
+                    <h1>Culture Event Name</h1>
+                    <h3 className="m-2 culture-tag">Culture Tag</h3>
+                    <img className="m-3" src="https://via.placeholder.com/250" alt="HTML5 Icon" style={{
+                        width:'250px',
+                        height:'250px',
+                        }}></img>
+                    <p className="m-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore
+                        magna aliqua. Egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum mattis ullamcorper velit sed
+                        ullamcorper.</p>
                 </div>
-            </div>
-            <button class="m-0 full-width no-round" type="submit">+ Add / - Remove Event</button>
-        </form>
+            </form>
+        </div>
     );
 }
 
-export default Signup;
+export default LongCard;
