@@ -150,70 +150,9 @@ button:hover {
 }
 
 header {
-  background-color:lightgray
-}
-div.title {
-  
-  color:black;
-  text-align: center;
-}
-div.title h1 {
-  padding: 10px;
+  background-color: var(--primary-color);
 }
 
-/* Main content */
-main.dashboard {
-  background-color: rgb(247, 247, 247);
-  
-}
-
-div.dateMonth p.card-title {
-  font-weight: bold;
-  color: white;
-}
-
-/* .horizontal-scroll > .row > {
-  overflow-x: auto;
-white-space: nowrap;
-}
-.horizontal-scroll > .row > .card-body p-1 {
-  display: inline-block;
-float: none;
-} */
-
-.horizontal-scroll {
-  margin: 4px, 4px;
-  padding: 4px;
-  width: 800px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-}
-
-/* Left Sidebar */
-
-#leftC{
-  background-color:lightgray;
-}
-#search-btn {
-  font-weight:bold; 
-  background-color: #AE2D44;
-  color: white;
-}
-
-#submit-btn {
-  background-color:#AE2D44;
-  color:white;
-}
-
-.title2 {
-  font-size: var(--font-size-md);
-}
-
-.card {
-  background-color: #AE2D44
-}
-
-.text-muted {
-  color: white !important;
+nav{
+  background-color: var(--primary-color);
 }
