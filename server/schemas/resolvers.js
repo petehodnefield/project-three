@@ -18,10 +18,13 @@ const resolvers = {
         },
         user: async (parent, { username }) => {
             return await User.findOne({ username })
-              .select('-__v -password')
-            //   Uncomment after reactions model is added
-              .populate('reactions')
-              .populate('events')
+            .populate({
+              path: 'reactions',
+              populate: {
+                path: 'events',
+                model: "Event"
+              }
+            })
           },
          events: async () => {
                 return await Event.find()
@@ -61,11 +64,18 @@ const resolvers = {
       
             return { token, user };
           },
-          addReaction: async (parent, { userId, reactionBody, username, events}, context) => {
+          addReaction: async (parent, { userId, reactionBody, username, eventId}, context) => {
             // We will need to add context here once front end is working
             // if (context.user) {
 
-            const reaction = await Reaction.create({ reactionBody, events, username: username });
+            // Creates a reaction with input values
+            const reaction = await Reaction.create({ reactionBody, username: username, eventId });
+
+            // Pushes eventId to the event type in Reaction Model
+            const updateReaction = await Reaction.updateOne(
+              {_id: reaction._id},
+              {$push: {events: eventId}}
+            )
         
             await User.findByIdAndUpdate(
               { _id: userId },
