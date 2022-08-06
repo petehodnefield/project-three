@@ -55,7 +55,10 @@ div.dateMonth p.card-title {
     color: white;
 }
 
-
+#submit-btn {
+    background-color:#AE2D44;
+    color:white;
+}
 
 .title2 {
     font-size: var(--font-size-md);
