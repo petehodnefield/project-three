@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 // const dateFormat = require('../utils/dateFormat');
 const { Schema } = mongoose;
+const eventSchema = require('./Event')
 
 const reactionSchema = new Schema(
   {
@@ -17,7 +18,13 @@ const reactionSchema = new Schema(
       type: Date,
       default: Date.now,
       // get: timestamp => dateFormat(timestamp)
-    }
+    },
+    events: [
+      {
+          type: Schema.Types.ObjectId,
+          ref: 'Event'
+      }
+  ]
   },
   {
     toJSON: {

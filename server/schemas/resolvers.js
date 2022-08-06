@@ -8,7 +8,7 @@ const resolvers = {
     Query: {
         users: async () => {
             return  User.find()
-            .populate('reactions')
+              .populate('reactions')
 
         },
         user: async (parent, { username }) => {
@@ -54,11 +54,11 @@ const resolvers = {
       
             return { token, user };
           },
-          addReaction: async (parent, { userId, reactionBody, username}, context) => {
+          addReaction: async (parent, { userId, reactionBody, username, events}, context) => {
             // We will need to add context here once front end is working
             // if (context.user) {
 
-            const reaction = await Reaction.create({ reactionBody, username: username });
+            const reaction = await Reaction.create({ reactionBody, events, username: username });
         
             await User.findByIdAndUpdate(
               { _id: userId },

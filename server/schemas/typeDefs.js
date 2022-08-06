@@ -28,6 +28,7 @@ const typeDefs = gql `
         reactionBody: String
         createdAt: String
         username: String
+        events: [Event]
     }  
     
     type Auth {
@@ -47,7 +48,7 @@ const typeDefs = gql `
     type Mutation {
         addUser(username: String!, email: String!, password: String!, organization: String!): Auth
         login(email: String!, password: String!): Auth
-        addReaction(reactionBody: String!, userId: String!, username: String!): Reaction
+        addReaction(reactionBody: String!, userId: String!, username: String!, events: String!): Reaction
 
     }
 
