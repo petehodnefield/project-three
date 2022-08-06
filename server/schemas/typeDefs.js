@@ -41,7 +41,7 @@ const typeDefs = gql `
         culture(username: String) :[Culture]
         user(username: String!): User
         events: [Event]
-        event(_id: ID!): Event
+        event(_id: ID): Event
         reactions: [Reaction]
     }
 

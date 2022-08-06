@@ -8,14 +8,20 @@ const resolvers = {
     Query: {
         users: async () => {
             return  User.find()
-              .populate('reactions')
-
+              .populate({
+                path: 'reactions',
+                populate: {
+                  path: 'events',
+                  model: "Event"
+                }
+              })
         },
         user: async (parent, { username }) => {
-            return User.findOne({ username })
+            return await User.findOne({ username })
               .select('-__v -password')
             //   Uncomment after reactions model is added
               .populate('reactions')
+              .populate('events')
           },
          events: async () => {
                 return await Event.find()

@@ -64,10 +64,11 @@ db.once('open', async () => {
         const reactionId = createdReaction._id
         // console.log('name:',name)
 
+        console.log(name)
         const updatedReaction = await Reaction.updateOne(
             {_id: reactionId},
-            { $push: { events:  "testtestetss" } },
-            {new: true}
+            { $push: { events:  eventId } },
+            // {new: true}
         )
 
         // Update the user data to include the reaction we just created
