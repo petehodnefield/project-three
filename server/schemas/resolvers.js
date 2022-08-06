@@ -25,6 +25,7 @@ const resolvers = {
         },
         reactions: async () => {
           return await Reaction.find()
+            .populate('events')
         },
         // cultures: async () => {
         //   return await Culture.find()
