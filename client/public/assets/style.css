@@ -43,6 +43,24 @@ div.dateMonth p.card-title {
     color: white;
 }
 
+/* .horizontal-scroll > .row > {
+    overflow-x: auto;
+  white-space: nowrap;
+}
+
+.horizontal-scroll > .row > .card-body p-1 {
+    display: inline-block;
+  float: none;
+} */
+
+.horizontal-scroll {
+    margin: 4px, 4px;
+    padding: 4px;
+    width: 800px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
 
 /* Left Sidebar */
 
