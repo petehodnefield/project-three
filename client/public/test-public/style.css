@@ -81,6 +81,7 @@ label {
 .full-width {
   width: 100%;
 }
+
 .long-card-header {
   background-color: var(--primary-color);
   border-radius: 10px 0px 0px 10px;
@@ -157,6 +158,19 @@ nav{
   background-color: var(--primary-color);
 }
 
+.nav-btn {
+  background: none;
+}
+
 #search-btn {
   font-size:var(--font-size-sm); 
+}
+
+.cream {
+  color: var(--tertiary-color);
+  font-weight: bold;
+}
+
+.quarter-width{
+  width: 75%;
 }
