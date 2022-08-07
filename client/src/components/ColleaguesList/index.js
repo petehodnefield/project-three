@@ -2,14 +2,14 @@ import React from "react";
 
 function ColleaguesList() {
     return (
-        <div className="col-auto">
-        <h3>Colleagues List</h3>
-        <ul className="full-width">
-          <li><button className= "my-1">-</button> Sam Newman </li>
-          <li><button className= "my-1">-</button> Mark Roberts</li>
-          <li><button className= "my-1">-</button> Andrew Walker</li>
-        </ul>
-      </div>
+      <div class="m-3 quarter-width col-auto">
+      <h3>COLLEAGUES LIST</h3>
+      <ul class="full-width">
+        <li class="cream"><button class= "my-1">-</button> Sam Newman </li>
+        <li class="cream"><button class= "my-1">-</button> Mark Roberts</li>
+        <li class="cream"><button class= "my-1">-</button> Andrew Walker</li>
+      </ul>
+    </div>
     );
 }
 
