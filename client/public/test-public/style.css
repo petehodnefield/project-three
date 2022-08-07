@@ -156,3 +156,7 @@ header {
 nav{
   background-color: var(--primary-color);
 }
+
+#search-btn {
+  font-size:var(--font-size-sm); 
+}
