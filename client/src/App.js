@@ -6,6 +6,9 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import LongCard from "./components/LongCard";
 import ShortCard from "./components/ShortCard";
+import ColleaguesList from './components/ColleaguesList';
+import ColleaguesSearch from './components/ColleaguesSearch';
+import QuickSearches from './components/QuickSearches';
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
         <SignUp></SignUp>
         <ShortCard></ShortCard>
         <LongCard></LongCard>
+        <ColleaguesList></ColleaguesList>
+        <ColleaguesSearch></ColleaguesSearch>
+        <QuickSearches></QuickSearches>
       </main>
     </div>
   );
