@@ -7,7 +7,7 @@ function ColleaguesSearch() {
       <div className="m-2 columns ">
         <input className="m-1 column" type="text" id="input" placeholder="Please enter name..."></input>
         <button type="submit" className="m-1 column is-one-quarter" id="search-btn">
-          Submit</button>
+          ></button>
       </div>
       <ul className="my-5 full-width">
         <li className="cream"><button className= "my-1">+</button> Anna Marie</li>
