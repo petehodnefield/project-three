@@ -21,7 +21,7 @@ const SingleEvent = (props) => {
         <h1 className="white big">DEI CALENDAR</h1>
       </header>
       <main className="">
-        <nav className="is-flex is-flex-direction-column is-align-items-center is-one-quarter">
+        <nav className="is-flex is-flex-direction-column is-align-items-center is-one-quarter raise shadow">
           <NavButtons isUserLoggedIn={auth.loggedIn}></NavButtons>
           {/* <QuickSearches></QuickSearches> */}
         </nav>

@@ -43,7 +43,7 @@ function ShortCard(props) {
 
 
   return (
-    <form className="m-4 is-flex is-flex-direction-column is-align-items-center short-card-width">
+    <form className="m-4 is-flex is-flex-direction-column is-align-items-center short-card-width shadow">
       <div className="short-card full-width">
         <div className="p-2">
           <h1 className="p-0 big white">{new Date(props.eventData.date).getDate()}</h1>

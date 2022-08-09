@@ -3,7 +3,7 @@ import React from "react";
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 function LongCard(props) {
-  let cultureCSS = "p-4 culture-tag "
+  let cultureCSS = "p-4 corner-tl culture-tag "
 
   switch (props.eventData.culture) {
     case 'Christian':
@@ -40,12 +40,12 @@ function LongCard(props) {
   }
 
   return (
-    <div className="m-5 container is-flex is-flex-direction-column is-align-items-center column">
+    <div className="m-5 container is-flex is-flex-direction-column is-align-items-center">
       {/* <button className="m-4 btn-generic " type="submit">
         + Add / - Remove Event
       </button> */}
 
-      <form className="m-4 columns">
+      <form className="m-4 long-card-size shadow columns">
         <div className="is-flex is-flex-direction-column is-align-items-center column is-one-third long-card-header">
           <h3 className="center big">STARTS</h3>
 
@@ -71,7 +71,7 @@ function LongCard(props) {
         <h3 className={cultureCSS}>{props.eventData.culture}</h3>
           <h1>{props.eventData.name}</h1>
           
-          <p className="m-3">
+          <p className="m-5">
             {props.eventData.description}
           </p>
         </div>

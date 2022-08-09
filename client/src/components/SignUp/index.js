@@ -46,7 +46,7 @@ function SignUp() {
 
   return (
     <form
-      className="m-4 is-flex is-flex-direction-column is-align-items-center form-login"
+      className="m-4 is-flex is-flex-direction-column is-align-items-center form-login shadow"
       id="#sign-up"
       onSubmit={handleFormSubmit}
     >

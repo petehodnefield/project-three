@@ -46,12 +46,12 @@ function Home() {
 
   return (
     <>
-      <header>
+      <header className="shadow">
         <h1 className="white big">DEI CALENDAR</h1>
       </header>
       {auth.loggedIn() ? (
         <main className="">
-          <nav className="is-flex is-flex-direction-row is-justify-content-center">
+          <nav className="is-flex is-flex-direction-row is-justify-content-center shadow raise">
             <NavButtons isUserLoggedIn={auth.loggedIn}></NavButtons>
             {/* <QuickSearches></QuickSearches> */}
           </nav>

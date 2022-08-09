@@ -15,8 +15,8 @@ function Home() {
 
   return (
     <div>
-      <header>
-        <h1 class="white big">DEI CALENDAR</h1>
+      <header className="shadow">
+        <h1 className="white big">DEI CALENDAR</h1>
       </header>
 
       <main class="columns">
