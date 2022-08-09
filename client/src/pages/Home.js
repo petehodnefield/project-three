@@ -58,8 +58,8 @@ function Home() {
           <main className="container is-flex is-flex-direction-column is-align-items-center">
             <h1 className="cream">UPCOMING CULTURAL EVENTS</h1>
             <div>
-              <LongCard></LongCard>
-              <ShortCard></ShortCard>
+              {/* <LongCard></LongCard> */}
+              {/* <ShortCard></ShortCard> */}
               <div>
                 {data.events.map((event) => (
                   <Link to={`/events/${event._id}`}>
