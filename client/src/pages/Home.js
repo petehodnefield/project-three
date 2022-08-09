@@ -4,7 +4,7 @@ import { useQuery, gql } from "@apollo/client";
 // Components
 import Login from "../components/Login";
 import SignUp from "../components/SignUp";
-import LongCard from "../components/LongCard";
+
 import ShortCard from "../components/ShortCard";
 import ColleaguesList from "../components/ColleaguesList";
 import ColleaguesSearch from "../components/ColleaguesSearch";
@@ -45,38 +45,24 @@ function Home() {
   console.log(data);
 
   return (
-    <div>
+    <>
       <header>
         <h1 className="white big">DEI CALENDAR</h1>
       </header>
       {auth.loggedIn() ? (
-        <main className="columns">
-          <nav className="m-0 p-0 container is-flex is-flex-direction-column is-align-items-center column is-one-quarter">
+        <main className="">
+          <nav className="is-flex is-flex-direction-row is-justify-content-center">
             <NavButtons isUserLoggedIn={auth.loggedIn}></NavButtons>
             {/* <QuickSearches></QuickSearches> */}
           </nav>
-          <main className="container is-flex is-flex-direction-column is-align-items-center">
-            <h1 className="cream">UPCOMING CULTURAL EVENTS</h1>
-            <div>
-              {/* <LongCard></LongCard> */}
-              {/* <ShortCard></ShortCard> */}
-              <div>
-                {data.events.map((event) => (
-                  <Link to={`/events/${event._id}`}>
-                    <div className="short-card full-width">
-                      <div className="p-2">
-                        <h1 className="p-0 big white">{event.date}</h1>
-                      </div>
-                      <div className="p-3 is-flex is-flex-direction-column is-align-items-center cream-back">
-                        <h1>{event.name}</h1>
-                        <h3 className="m-2 culture-tag raise">
-                          {event.culture}
-                        </h3>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+          <main className="is-flex is-flex-direction-column is-align-items-center">
+            <h1 className="cream">ALL UPCOMING CULTURAL EVENTS</h1>
+            <div className=" is-max-desktop is-flex is-flex-wrap-wrap is-justify-content-center full-width">
+              {data.events.map((event) => (
+                <Link to={`/events/${event._id}`}>
+                  <ShortCard eventData={event}></ShortCard>
+                </Link>
+              ))}
             </div>
           </main>
         </main>
@@ -90,7 +76,7 @@ function Home() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

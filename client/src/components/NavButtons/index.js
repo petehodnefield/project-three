@@ -7,9 +7,9 @@ function NavButtons(props) {
     auth.logout();
   }
   return (
-    <div className="is-flex is-flex-direction-column">
+    <>
       {props.isUserLoggedIn ? (
-        <div className="is-flex is-flex-direction-column">
+        <div className="mb-3 is-flex is-flex-direction-row is-justify-content-center">
           <Link to={`/`}>
             <button className="m-1 nav-btn" onClick={() => ""}>
               HOME
@@ -27,7 +27,7 @@ function NavButtons(props) {
           LOGIN
         </button>
       )}
-    </div>
+    </>
   );
 }
 
