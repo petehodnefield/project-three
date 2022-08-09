@@ -31,7 +31,7 @@ function Login() {
   return (
     <form
       onSubmit={handleFormSubmit}
-      className="m-4 is-flex is-flex-direction-column is-align-items-center form-login"
+      className="mb-4 is-flex is-flex-direction-column is-align-items-center form-login"
       id="#login-form"
     >
       <div className="">

@@ -76,9 +76,13 @@ function Home() {
           </main>
         </main>
       ) : (
-        <div>
-          <Login></Login>
-          <SignUp></SignUp>
+        <div className="hero is-fullheight">
+          <div className="hero-body is-justify-content-center is-align-items-center">
+            <div className="is-flex is-flex-direction-column	is-justify-content-center is-align-items-center">
+              <Login className="mb-4"></Login>
+              <SignUp></SignUp>
+            </div>
+          </div>
         </div>
       )}
     </div>
