@@ -43,19 +43,21 @@ function Home() {
     }
   }
 
+  console.log(data);
+
   return (
     <div>
       <header>
-        <h1 class="white big">DEI CALENDAR</h1>
+        <h1 className="white big">DEI CALENDAR</h1>
       </header>
 
-      <main class="columns">
-        <nav class="m-0 p-0 container is-flex is-flex-direction-column is-align-items-center column is-one-quarter">
+      <main className="columns">
+        <nav className="m-0 p-0 container is-flex is-flex-direction-column is-align-items-center column is-one-quarter">
           <NavButtons isUserLoggedIn={false} iLoveCake={true}></NavButtons>
           <QuickSearches></QuickSearches>
         </nav>
         <main className="container is-flex is-flex-direction-column is-align-items-center">
-          <h1 class="cream">UPCOMING CULTURAL EVENTS</h1>
+          <h1 className="cream">UPCOMING CULTURAL EVENTS</h1>
           <LongCard></LongCard>
           <ShortCard></ShortCard>
           {renderLogin(false)}
