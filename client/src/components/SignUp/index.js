@@ -50,8 +50,8 @@ function SignUp() {
       id="#sign-up"
       onSubmit={handleFormSubmit}
     >
-      <div className="">
-        <h1>SIGN UP</h1>
+      <div className="log-header full-width corner-t">
+        <h1 className="cream">SIGN UP</h1>
       </div>
       {error ? (
       <p className="m-1 error">Please fill ALL fields & Password Length Min. 5!</p>
@@ -93,7 +93,7 @@ function SignUp() {
         ></input>
       </div>
       <button className="m-0 mt-4 full-width no-round" type="submit">
-        Sign Up!
+        SIGN UP!
       </button>
     </form>
   );

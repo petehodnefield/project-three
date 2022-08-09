@@ -240,6 +240,10 @@ nav {
   border-radius: 0px 8px 0px 0px;
 }
 
+.corner-t{
+  border-radius: 8px 8px 0px 0px;
+}
+
 .no-space{
   line-height: 70px;
 }
@@ -250,4 +254,8 @@ nav {
 
 .bold {
   font-weight: bold;
+}
+
+.log-header{
+  background-color: var(--primary-color);
 }

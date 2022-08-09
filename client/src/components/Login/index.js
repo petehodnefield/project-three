@@ -38,8 +38,8 @@ function Login() {
       className="mb-4 is-flex is-flex-direction-column is-align-items-center form-login shadow"
       id="#login-form"
     >
-      <div className="">
-        <h1>LOGIN</h1>
+      <div className="log-header full-width corner-t">
+        <h1 className="cream">LOGIN</h1>
       </div>
       <p className="m-1 error">{errorHTML}</p>
       <div className="m-3">
@@ -61,7 +61,7 @@ function Login() {
         ></input>
       </div>
       <button className="m-0 mt-4 full-width no-round" type="submit">
-        Log In
+        LOG IN!
       </button>
     </form>
   );
