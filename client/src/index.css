@@ -7,7 +7,7 @@
   /* Font Sizes */
   --font-size-lg: 48px;
   --font-size-md: 24px;
-  --font-size-sm: 18px;
+  --font-size-sm: 20px;
   --font-size-ti: 12px;
 }
 
@@ -238,4 +238,16 @@ nav {
 
 .corner-tl{
   border-radius: 0px 8px 0px 0px;
+}
+
+.no-space{
+  line-height: 70px;
+}
+
+.green{
+  color: var(--secondary-color);
+}
+
+.bold {
+  font-weight: bold;
 }

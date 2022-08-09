@@ -51,8 +51,10 @@ function LongCard(props) {
 
           <div className="columns full-width dates">
             <div>
-              <h1 className="center white">{months[new Date (props.eventData.date).getMonth()]}</h1>
-              <h1 className="p-0 white big raise">{new Date (props.eventData.date).getDate()}</h1>
+              
+              <h1 className="p-0 cream">{new Date(props.eventData.date).toLocaleDateString('en-us', { weekday: "long" })}</h1>
+              <h1 className="p-0 white big no-space">{new Date (props.eventData.date).getDate()}</h1>
+              <h1 className="center green no-space">{months[new Date (props.eventData.date).getMonth()]}</h1>
               
             </div>
 
@@ -71,7 +73,7 @@ function LongCard(props) {
         <h3 className={cultureCSS}>{props.eventData.culture}</h3>
           <h1>{props.eventData.name}</h1>
           
-          <p className="m-5">
+          <p className="m-5 bold">
             {props.eventData.description}
           </p>
         </div>
