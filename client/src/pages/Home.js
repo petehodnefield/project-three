@@ -10,6 +10,7 @@ import ColleaguesList from "../components/ColleaguesList";
 import ColleaguesSearch from "../components/ColleaguesSearch";
 import QuickSearches from "../components/QuickSearches";
 import NavButtons from "../components/NavButtons";
+import { Link } from "react-router-dom";
 import auth from "../utils/auth";
 
 const GET_EVENTS = gql`
@@ -61,15 +62,19 @@ function Home() {
               <ShortCard></ShortCard>
               <div>
                 {data.events.map((event) => (
-                  <div className="short-card full-width">
-                    <div className="p-2">
-                      <h1 className="p-0 big white">{event.date}</h1>
+                  <Link to={`/events/${event._id}`}>
+                    <div className="short-card full-width">
+                      <div className="p-2">
+                        <h1 className="p-0 big white">{event.date}</h1>
+                      </div>
+                      <div className="p-3 is-flex is-flex-direction-column is-align-items-center cream-back">
+                        <h1>{event.name}</h1>
+                        <h3 className="m-2 culture-tag raise">
+                          {event.culture}
+                        </h3>
+                      </div>
                     </div>
-                    <div className="p-3 is-flex is-flex-direction-column is-align-items-center cream-back">
-                      <h1>{event.name}</h1>
-                      <h3 className="m-2 culture-tag raise">{event.culture}</h3>
-                    </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

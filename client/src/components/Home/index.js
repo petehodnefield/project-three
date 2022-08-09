@@ -10,39 +10,32 @@ import SignUp from "../SignUp";
 import Auth from "../../utils/auth";
 
 function Home() {
-
   const loggedIn = Auth.loggedIn();
-  console.log('loggedin:', loggedIn)
+  console.log("loggedin:", loggedIn);
 
-    return  (
+  return (
     <div>
+      <header>
+        <h1 class="white big">DEI CALENDAR</h1>
+      </header>
 
-    <header>
-      <h1 class="white big">DEI CALENDAR</h1>
-    </header>
-
-    <main class="columns">
-      <nav class="m-0 p-0 container is-flex is-flex-direction-column is-align-items-center column is-one-quarter">
-        <NavButtons></NavButtons>
-        <QuickSearches></QuickSearches>
-        <ColleaguesList></ColleaguesList>
-        {loggedIn ? (
-        <ColleaguesSearch></ColleaguesSearch>
-
-        ): (
-          <div>Hi</div>
-        )}
-      </nav>
-      <main className="container is-flex is-flex-direction-column is-align-items-center">
-      <h1 class="cream">UPCOMING CULTURAL EVENTS</h1>
-        <LongCard></LongCard>
-        <ShortCard></ShortCard>
-        <Login></Login>
-        <SignUp></SignUp>
+      <main class="columns">
+        <nav class="m-0 p-0 container is-flex is-flex-direction-column is-align-items-center column is-one-quarter">
+          <NavButtons></NavButtons>
+          <QuickSearches></QuickSearches>
+          <ColleaguesList></ColleaguesList>
+          {loggedIn ? <ColleaguesSearch></ColleaguesSearch> : <div>Hi</div>}
+        </nav>
+        <main className="container is-flex is-flex-direction-column is-align-items-center">
+          <h1 class="cream">UPCOMING CULTURAL EVENTS</h1>
+          <LongCard></LongCard>
+          <ShortCard></ShortCard>
+          <Login></Login>
+          <SignUp></SignUp>
+        </main>
       </main>
-    </main>
-  </div>
-    )
+    </div>
+  );
 }
 
-export default Home
+export default Home;

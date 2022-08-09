@@ -1,15 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
 
-import './index.css';
-import Home from './pages/Home';
-import reportWebVitals from './reportWebVitals';
+import "./index.css";
+import Home from "./pages/Home";
+import SingleEvent from "./pages/singleEvent";
+import ShortCard from "./components/ShortCard";
+import reportWebVitals from "./reportWebVitals";
 
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
@@ -27,20 +30,20 @@ import reportWebVitals from './reportWebVitals';
 
 const client = new ApolloClient({
   // link: authLink.concat(httpLink),
-  uri: 'http://localhost:3001/graphql',
+  uri: "http://localhost:3001/graphql",
   cache: new InMemoryCache(),
 });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
-            {/* <Route index element={<Home />} /> */}
-            {/* <Route path="dashboard" element={<Dashboard />} /> */}
-          </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/events/:id" element={<SingleEvent />} />
+          {/* <Route index element={<Home />} /> */}
+          {/* <Route path="dashboard" element={<Dashboard />} /> */}
         </Routes>
       </BrowserRouter>
     </ApolloProvider>

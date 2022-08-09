@@ -21,6 +21,9 @@ const typeDefs = gql`
     description: String
     date: String
     culture: String
+    reactionCount: Int
+
+    reactions: [Reaction]
   }
 
   type Reaction {
