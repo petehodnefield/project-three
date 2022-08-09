@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 
 import './index.css';
 import App from './pages/App';
@@ -47,21 +47,6 @@ root.render(
     </ApolloProvider>
   </React.StrictMode>
 );
-
-// client
-//   .query({
-//     query: gql`
-//       query GetLocations {
-//         locations {
-//           id
-//           name
-//           description
-//           photo
-//         }
-//       }
-//     `,
-//   })
-//   .then((result) => console.log(result));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
