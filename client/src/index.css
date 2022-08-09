@@ -115,6 +115,7 @@ label {
 
 .culture-tag {
   font-style: italic;
+  color: var(--primary-color);
 }
 
 .white {
@@ -190,4 +191,38 @@ nav {
 .raise {
   position: relative;
   bottom: 25px;
+}
+
+/* Culture Tags */
+.christian{
+  background-color: #f7746a;
+}
+
+.muslim{
+  background-color: #fcb558;
+}
+
+.jewish{
+  background-color: #f5f590;
+}
+.hindu{
+  background-color: lightgreen;
+}
+.buddhist{
+  background-color: pink;
+}
+.african{
+  background-color: #dea1ff;
+}
+.asian{
+  background-color: #909af5;
+}
+.mexican{
+  background-color: yellowgreen;
+}
+.native{
+  background-color: skyblue;
+}
+.special{
+  background-color: black;
 }
