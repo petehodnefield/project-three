@@ -8,13 +8,12 @@ import {
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 
 import './index.css';
-import App from './pages/App';
 import Home from './pages/Home';
 import reportWebVitals from './reportWebVitals';
 
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
+// const httpLink = createHttpLink({
+//   uri: '/graphql',
+// });
 
 // const authLink = setContext((_, { headers }) => {
 //   const token = localStorage.getItem('id_token');
@@ -28,7 +27,7 @@ const httpLink = createHttpLink({
 
 const client = new ApolloClient({
   // link: authLink.concat(httpLink),
-  link: httpLink,
+  uri: 'http://localhost:3001/graphql',
   cache: new InMemoryCache(),
 });
 
