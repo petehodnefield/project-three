@@ -1,7 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { setContext } from '@apollo/client/link/context';
+
+
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
 // Components
+import Home from './components/Home';
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import LongCard from "./components/LongCard";
@@ -11,29 +22,43 @@ import ColleaguesSearch from './components/ColleaguesSearch';
 import QuickSearches from './components/QuickSearches';
 import NavButtons from './components/NavButtons';
 
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  uri: 'http://localhost:3001/graphql',
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
-    <div>
-      <header>
-        <h1 class="white big">DEI CALENDAR</h1>
-      </header>
+    <ApolloProvider client={client}>
+      <Router>
+      <Routes>
+    <Route
+      path="/"
+      element={<Home/>}
+    />
 
-      <main class="columns">
-        <nav class="m-0 p-0 container is-flex is-flex-direction-column is-align-items-center column is-one-quarter">
-          <NavButtons></NavButtons>
-          <QuickSearches></QuickSearches>
-          <ColleaguesList></ColleaguesList>
-          <ColleaguesSearch></ColleaguesSearch>
-        </nav>
-        <main className="container is-flex is-flex-direction-column is-align-items-center">
-        <h1 class="cream">UPCOMING CULTURAL EVENTS</h1>
-          <LongCard></LongCard>
-          <ShortCard></ShortCard>
-          <Login></Login>
-          <SignUp></SignUp>
-        </main>
-      </main>
-    </div>
+   
+    </Routes>
+
+    </Router>
+
+    </ApolloProvider>
+
   );
 }
 
