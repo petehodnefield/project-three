@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth";
+
+var errorHTML = "";
+
 function SignUp() {
   const [formState, setFormState] = useState({
     username: "",
@@ -35,9 +38,12 @@ function SignUp() {
 
       Auth.login(data.addUser.token);
     } catch (e) {
-      console.error(e);
+      errorHTML = "Please fill ALL fields.<br>[Password Length Min. 5]"
+      console.error(e.graphQLErrors);
+      console.error(error);
     }
   };
+
   return (
     <form
       className="m-4 is-flex is-flex-direction-column is-align-items-center form-login"
@@ -47,7 +53,11 @@ function SignUp() {
       <div className="">
         <h1>SIGN UP</h1>
       </div>
-      <p className="m-1 error">[error message]</p>
+      {error ? (
+      <p className="m-1 error">Please fill ALL fields & Password Length Min. 5!</p>
+      ) : (
+        <></>
+      )}
       <div className="m-3">
         <label>First Name</label>
         <input

@@ -3,6 +3,8 @@ import { useMutation } from "@apollo/client";
 import { LOGIN } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 
+var errorHTML="";
+
 function Login() {
   const [formState, setFormState] = useState({ email: "", password: "" });
   console.log(formState);
@@ -17,7 +19,8 @@ function Login() {
       const token = mutationResponse.data.login.token;
       Auth.login(token);
     } catch (e) {
-      console.log(e);
+      errorHTML = "User Not Found! OR Incorrect Credentials!";
+      console.log(e.graphQLErrors[0].message);
     }
   };
 
@@ -28,6 +31,7 @@ function Login() {
       [name]: value,
     });
   };
+
   return (
     <form
       onSubmit={handleFormSubmit}
@@ -37,7 +41,7 @@ function Login() {
       <div className="">
         <h1>LOGIN</h1>
       </div>
-      <p className="m-1 error">error message</p>
+      <p className="m-1 error">{errorHTML}</p>
       <div className="m-3">
         <label>Email</label>
         <input

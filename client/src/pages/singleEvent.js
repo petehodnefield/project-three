@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import { QUERY_EVENT } from "../utils/queries";
-import ShortCard from "../components/ShortCard";
 
 const SingleEvent = (props) => {
   const { id: eventId } = useParams();

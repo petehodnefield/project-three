@@ -32,10 +32,6 @@ function LongCard() {
         <div className="is-flex is-flex-direction-column is-align-items-center column">
           <h1>Culture Event Name</h1>
           <h3 className="m-2 culture-tag">Culture Tag</h3>
-          {/* <img className="m-3" src="https://via.placeholder.com/250" alt="HTML5 Icon" style={{
-                        width:'250px',
-                        height:'250px',
-                        }}></img> */}
           <p className="m-3">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas

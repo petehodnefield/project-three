@@ -7,14 +7,14 @@ function NavButtons(props) {
   }
   return (
     <div className="is-flex is-flex-direction-column">
-      {!props.isUserLoggedIn ? (
+      {props.isUserLoggedIn ? (
         <div className="is-flex is-flex-direction-column">
           <button className="m-1 nav-btn" onClick={() => ""}>
             HOME
           </button>
-          <button className="m-1 nav-btn" onClick={() => ""}>
+          {/* <button className="m-1 nav-btn" onClick={() => ""}>
             DASHBOARD
-          </button>
+          </button> */}
           <button className="m-1 nav-btn" onClick={logOut}>
             LOGOUT
           </button>

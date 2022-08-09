@@ -52,8 +52,8 @@ function Home() {
       {auth.loggedIn() ? (
         <main className="columns">
           <nav className="m-0 p-0 container is-flex is-flex-direction-column is-align-items-center column is-one-quarter">
-            <NavButtons></NavButtons>
-            <QuickSearches></QuickSearches>
+            <NavButtons isUserLoggedIn={auth.loggedIn}></NavButtons>
+            {/* <QuickSearches></QuickSearches> */}
           </nav>
           <main className="container is-flex is-flex-direction-column is-align-items-center">
             <h1 className="cream">UPCOMING CULTURAL EVENTS</h1>
