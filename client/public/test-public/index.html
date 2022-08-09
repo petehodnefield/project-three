@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site for DEI Calendar" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <title>DEI Calendar</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="white big">DEI CALENDAR</h1>
+  </header>
+
+  <main class="columns">
+    <!-- Nav Bar -->
+    <nav class="m-0 p-0 container is-flex is-flex-direction-column is-align-items-center column is-one-quarter">
+      <!-- Nav BTNs -->
+      <div class="is-flex is-flex-direction-column">
+        <button class="m-1 nav-btn"onclick="">HOME</button>
+        <button class="m-1 nav-btn"onclick="">DASHBOARD</button>
+        <button class="m-1 nav-btn"onclick="">LOGIN</button>
+        <button class="m-1 nav-btn"onclick="">LOGOUT</button>
+      </div>
+
+      <!-- Quick Search BTNs -->
+      <div class="m-3 is-flex is-flex-direction-column is-align-items-center">
+        <h3>QUICK SEARCHES</h3>
+        <button class="full-width m-1" type=" submit" id="search-btn">
+          American</button>
+        <button class="full-width m-1" type=" submit" id="search-btn">
+          African American</button>
+        <button class="full-width m-1" type=" submit" id="search-btn">
+          Asian</button>
+        <button class="full-width m-1" type=" submit" id="search-btn">
+          Hispanic/Latino</button>
+        <button class="full-width m-1" type=" submit" id="search-btn">
+          Native American</button>
+      </div>
+
+
+      <!-- Colleague List -->
+      <div class="m-3 quarter-width col-auto">
+        <h3>COLLEAGUES LIST</h3>
+        <ul class="full-width">
+          <li class="cream"><button class= "my-1">-</button> Sam Newman </li>
+          <li class="cream"><button class= "my-1">-</button> Mark Roberts</li>
+          <li class="cream"><button class= "my-1">-</button> Andrew Walker</li>
+        </ul>
+      </div>
+
+      <!-- Colleague Search -->
+      <div class="m-3 quarter-width">
+        <h3>COLLEAGUES SEARCH</h3>
+        <div class="m-2 columns ">
+          <input class="m-1 column" type="text" id="input" placeholder="Please enter name..."></input>
+          <button type="submit" class="m-1 column is-one-quarter" id="search-btn">
+            Submit</button>
+        </div>
+        <ul class="my-5 full-width">
+          <li class="cream"><button class= "my-1">+</button> Anna Marie</li>
+          <li class="cream"><button class= "my-1">+</button> Andrew Walker</li>
+          <li class="cream"><button class= "my-1">+</button> Bianca Fortier</li>
+          <li class="cream"><button class= "my-1">+</button> Bala Kay</li>
+          <li class="cream"><button class= "my-1">+</button> Dennis Johnson</li>
+          <li class="cream"><button class= "my-1">+</button> Sam Newman</li>
+          <li class="cream"><button class= "my-1">+</button> Mark Roberts</li>
+        </ul>
+      </div>
+
+    </nav>
+
+    <!-- Upcoming Events -->
+    <section class="p-0 container is-flex is-flex-direction-column is-align-items-center column">
+      <!-- Heading -->
+      <h1 class="cream">UPCOMING CULTURAL EVENTS</h1>
+
+      <!-- Add Event Button -->
+      <button class="m-4 btn-generic " type="submit">+ Add / - Remove Event</button>
+
+      <!-- Event Long Card -->
+      <form class="m-4 columns">
+        <!-- Date Detail Header -->
+        <div class="is-flex is-flex-direction-column is-align-items-center column is-one-third long-card-header">
+          <h3 class="center big">DATES</h3>
+          <!-- Dates -->
+          <div class="columns full-width dates">
+            <!-- Start Date -->
+            <div>
+              <h3>START</h3>
+              <h1 class="p-0 white big">01</h1>
+              <h3 class="center">JUNE</h3>
+            </div>
+            <!-- End Date -->
+            <div>
+              <h3>ENDS</h3>
+              <h1 class="p-0 white big">06</h1>
+              <h3 class="center">JUNE</h3>
+            </div>
+          </div>
+          <!-- People Interested -->
+          <p class="white">53 People are Participating</p>
+          <p class="white">5 Colleagues are Interested!</p>
+        </div>
+        <!-- Event Detail Body -->
+        <div class="is-flex is-flex-direction-column is-align-items-center column">
+          <h1>[Culture Event Name]</h1>
+          <h3 class="m-2 culture-tag">[Culture Tag]</h3>
+          <img class="m-3" src="https://via.placeholder.com/250" alt="HTML5 Icon" style="width:250px;height:250px;">
+          <p class="m-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore
+            magna aliqua. Egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum mattis ullamcorper velit
+            sed
+            ullamcorper.</p>
+        </div>
+      </form>
+
+      <!-- Event Short Card -->
+      <form class="m-4 is-flex is-flex-direction-column is-align-items-center short-card-width">
+
+        <div class="short-card">
+          <!-- Date Detail Header -->
+          <div>
+            <h1 class="p-0 big white">01</h1>
+            <h3 class="big">JUNE</h3>
+          </div>
+          <!-- Event Detail Body -->
+          <div class="m-4 is-flex is-flex-direction-column is-align-items-center">
+            <h1 class="white">[Culture Event Name]</h1>
+            <h3 class="m-2 culture-tag">[Culture Tag]</h3>
+            <img class="m-3" src="https://via.placeholder.com/250" alt="HTML5 Icon" style="width:250px;height:250px;">
+            <!-- People Interested -->
+            <p class="white">53 People are Participating</p>
+            <p class="white">5 Colleagues are Interested!</p>
+          </div>
+        </div>
+        <button class="m-0 full-width no-round" type="submit">+ Add / - Remove Event</button>
+      </form>
+
+
+      <!-- LOG IN FORM -->
+      <form class="m-4 is-flex is-flex-direction-column is-align-items-center form-login" id="#login-form">
+        <div class="">
+          <h1>LOGIN</h1>
+        </div>
+        <p class="m-1 error">[error message]</p>
+        <div class="m-3">
+          <label>Username</label>
+          <input type="text" placeholder="John1234" id="username-login">
+          <label>Password</label>
+          <input type="password" placeholder="*******" id="password-login">
+        </div>
+        <button class="m-0 mt-4 full-width no-round" type="submit">Log In</button>
+      </form>
+
+      <!-- SIGN UP FORM -->
+      <form class="m-4 is-flex is-flex-direction-column is-align-items-center form-login" id="#sign-up">
+        <div class="">
+          <h1>SIGN UP</h1>
+        </div>
+        <p class="m-1 error">[error message]</p>
+        <div class="m-3">
+          <label>Full Name</label>
+          <input type="text" placeholder="John H. Smith" id="fullname-signup">
+          <label>Username</label>
+          <input type="text" placeholder="John1234" id="username-signup">
+          <label>Email Address</label>
+          <input type="email" placeholder="john1234@example.com" id="email-signup">
+          <label>Password</label>
+          <input type="password" placeholder="*******" id="password-signup">
+        </div>
+        <button class="m-0 mt-4 full-width no-round" type="submit">Sign Up!</button>
+      </form>
+
+    </section>
+  </main>
+
+
+
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <!-- Moment -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <script src="assets/script.js"></script>
+
+</body>
+
+</html>
