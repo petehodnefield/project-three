@@ -5,7 +5,7 @@ function ColleaguesSearch() {
       <div className="m-3 quarter-width">
       <h3>COLLEAGUES SEARCH</h3>
       <div className="m-2 columns ">
-        <input className="m-1 column" type="text" id="input" placeholder="Please enter name..."></input>
+        <input className="m-1 column" type="text" id="input" placeholder="Enter name..."></input>
         <button type="submit" className="m-1 column is-one-quarter" id="search-btn">
           ></button>
       </div>

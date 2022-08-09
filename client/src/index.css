@@ -179,3 +179,12 @@ font-weight: bold;
 .quarter-width{
 width: 75%;
 }
+
+.cream-back {
+  background-color: var(--tertiary-color);
+}
+
+.raise {
+  position: relative;
+  bottom: 25px;
+}
