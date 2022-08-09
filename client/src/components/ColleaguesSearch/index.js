@@ -1,6 +1,9 @@
 import React from "react";
 
 function ColleaguesSearch() {
+  const colleagues = [
+    
+  ]
     return (
       <div className="m-3 quarter-width">
       <h3>COLLEAGUES SEARCH</h3>
