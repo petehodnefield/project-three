@@ -17,15 +17,15 @@ const SingleEvent = (props) => {
   console.log(data);
   return (
     <div>
-      <header>
+      <header className="shadow">
         <h1 className="white big">DEI CALENDAR</h1>
       </header>
-      <main className="">
-        <nav className="is-flex is-flex-direction-column is-align-items-center is-one-quarter raise shadow">
+      <main className="columns">
+        <nav className="mt-5 is-flex is-flex-direction-column column is-one-fifth">
           <NavButtons isUserLoggedIn={auth.loggedIn}></NavButtons>
           {/* <QuickSearches></QuickSearches> */}
         </nav>
-        <main className="is-flex is-flex-direction-column is-align-items-center">
+        <main className="is-flex is-flex-direction-column is-align-items-center column">
           <LongCard eventData={event}></LongCard>
         </main>
       </main>

@@ -50,13 +50,13 @@ function Home() {
         <h1 className="white big">DEI CALENDAR</h1>
       </header>
       {auth.loggedIn() ? (
-        <main className="">
-          <nav className="is-flex is-flex-direction-row is-justify-content-center shadow raise">
+        <main className="columns">
+          <nav className="mt-5 is-flex is-flex-direction-column column is-one-fifth">
             <NavButtons isUserLoggedIn={auth.loggedIn}></NavButtons>
-            {/* <QuickSearches></QuickSearches> */}
+            <QuickSearches></QuickSearches>
           </nav>
-          <main className="is-flex is-flex-direction-column is-align-items-center">
-            <h1 className="cream">ALL UPCOMING CULTURAL EVENTS</h1>
+          <main className="is-flex is-flex-direction-column is-align-items-center column">
+            <h1 className="pl-5 cream full-width text-left">ALL UPCOMING CULTURAL EVENTS</h1>
             <div className=" is-max-desktop is-flex is-flex-wrap-wrap is-justify-content-center full-width">
               {data.events.map((event) => (
                 <Link to={`/events/${event._id}`}>

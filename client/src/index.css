@@ -168,9 +168,9 @@ header {
   background-color: var(--primary-color);
 }
 
-nav {
+/* nav {
   background-color: var(--primary-color);
-}
+} */
 
 .nav-btn {
   background: none;
@@ -258,4 +258,10 @@ nav {
 
 .log-header{
   background-color: var(--primary-color);
+}
+
+.text-left{
+  text-align: left;
+  position: relative;
+  left: 100px;
 }
