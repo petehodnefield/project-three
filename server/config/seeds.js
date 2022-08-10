@@ -38,49 +38,49 @@ db.once("open", async () => {
 
   const createdEvents = await Event.collection.insertMany(eventData);
 
-  // create reactions
-  let createdReactions = [];
-  const reactionType = ["Will be attending", "Is interested"];
+  // // create reactions
+  // let createdReactions = [];
+  // const reactionType = ["Will be attending", "Is interested"];
 
-  for (let i = 0; i < 50; i += 1) {
-    const test = "example";
-    // Randomly pull the reactionType
-    const reactionBody = reactionType[Math.floor(Math.random() * 2)];
+  // for (let i = 0; i < 50; i += 1) {
+  //   const test = "example";
+  //   // Randomly pull the reactionType
+  //   const reactionBody = reactionType[Math.floor(Math.random() * 2)];
 
-    // Randomly select an index from the users
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    // Destructure the username and _id from the randomly selected user
-    const { username, _id: userId } = createdUsers.ops[randomUserIndex];
+  //   // Randomly select an index from the users
+  //   const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
+  //   // Destructure the username and _id from the randomly selected user
+  //   const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
-    // Random event, random eventId
-    const randomEventIndex = Math.floor(
-      Math.random() * createdEvents.ops.length
-    );
-    const { name, _id: eventId } = createdEvents.ops[randomEventIndex];
+  //   // Random event, random eventId
+  //   const randomEventIndex = Math.floor(
+  //     Math.random() * createdEvents.ops.length
+  //   );
+  //   const { name, _id: eventId } = createdEvents.ops[randomEventIndex];
 
-    console.log("eventId", eventId);
-    // Create a reaction with the reactionBody and username
-    const createdReaction = await Reaction.create({ reactionBody, username });
+  //   console.log("eventId", eventId);
+  //   // Create a reaction with the reactionBody and username
+  //   const createdReaction = await Reaction.create({ reactionBody, username });
 
-    const reactionId = createdReaction._id;
-    // console.log('name:',name)
+  //   const reactionId = createdReaction._id;
+  //   // console.log('name:',name)
 
-    console.log(name);
-    const updatedReaction = await Reaction.updateOne(
-      { _id: reactionId },
-      { $push: { events: eventId } }
-      // {new: true}
-    );
+  //   console.log(name);
+  //   const updatedReaction = await Reaction.updateOne(
+  //     { _id: reactionId },
+  //     { $push: { events: eventId } }
+  //     // {new: true}
+  //   );
 
-    // Update the user data to include the reaction we just created
-    const updatedUser = await User.updateOne(
-      { _id: userId },
-      { $push: { reactions: createdReaction._id } }
-    );
+  //   // Update the user data to include the reaction we just created
+  //   const updatedUser = await User.updateOne(
+  //     { _id: userId },
+  //     { $push: { reactions: createdReaction._id } }
+  //   );
 
-    // Push to created reactions array
-    createdReactions.push(createdReaction);
-  }
+  //   // Push to created reactions array
+  //   createdReactions.push(createdReaction);
+  // }
 
   // TODO:
   // We need to ObjectId from the event
