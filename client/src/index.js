@@ -14,9 +14,9 @@ import SingleEvent from "./pages/singleEvent";
 import ShortCard from "./components/ShortCard";
 import reportWebVitals from "./reportWebVitals";
 
-// const httpLink = createHttpLink({
-//   uri: '/graphql',
-// });
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
 
 // const authLink = setContext((_, { headers }) => {
 //   const token = localStorage.getItem('id_token');
@@ -29,8 +29,9 @@ import reportWebVitals from "./reportWebVitals";
 // });
 
 const client = new ApolloClient({
-  // link: authLink.concat(httpLink),
-  uri: "http://localhost:3001/graphql",
+ // link: authLink.concat(httpLink),
+  link: httpLink,
+  // uri: "http://localhost:3001/graphql",
   cache: new InMemoryCache(),
 });
 
