@@ -1,4 +1,4 @@
-const faker = require("faker");
+// const faker = require("faker");
 
 const db = require("./connection");
 const events = require("./event-data");
@@ -15,14 +15,14 @@ db.once("open", async () => {
   const userData = [];
   const organizations = ["Apple", "Google", "Facebook", "Tesla", "Microsoft"];
 
-  for (let i = 0; i < 50; i += 1) {
-    const username = faker.internet.userName();
-    const email = faker.internet.email(username);
-    const password = faker.internet.password();
+  // for (let i = 0; i < 50; i += 1) {
+  //   const username = faker.internet.userName();
+  //   const email = faker.internet.email(username);
+  //   const password = faker.internet.password();
 
-    const firstName = faker.name.firstName();
-    userData.push({ username, email, password, firstName });
-  }
+  //   const firstName = faker.name.firstName();
+  //   userData.push({ username, email, password, firstName });
+  // }
 
   const createdUsers = await User.collection.insertMany(userData);
 
