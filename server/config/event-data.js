@@ -55,9 +55,9 @@ const events = [
         culture: 'Mexican American'
     },
     {
-        name: 'Birthday of Buddha:',
+        name: 'Birthday of Buddha',
         description: "Celebrating Buddha’s birthday.",
-        date: '05/0"/2023',
+        date: '05/08/2023',
         culture: 'Buddhist'
     },
     {

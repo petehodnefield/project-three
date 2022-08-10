@@ -1,32 +1,41 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-const eventSchema = new Schema({
+const eventSchema = new Schema(
+  {
     name: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
     description: {
-      type: String
+      type: String,
     },
     date: {
-      type: String
+      type: String,
     },
     culture: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
+    reactions: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Reaction",
+      },
+    ],
   },
   {
     toJSON: {
-        virtuals: true
-    }
+      virtuals: true,
+    },
   }
-
 );
+eventSchema.virtual("reactionCount").get(function () {
+  return this.reactions.length;
+});
 
-const Event = mongoose.model('Event', eventSchema);
+const Event = mongoose.model("Event", eventSchema);
 
 module.exports = Event;

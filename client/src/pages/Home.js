@@ -1,70 +1,84 @@
-import React from 'react';
-import '../App.css';
-import { useQuery, gql } from '@apollo/client';
+import React from "react";
+import "../App.css";
+import { useQuery, gql } from "@apollo/client";
 // Components
 import Login from "../components/Login";
 import SignUp from "../components/SignUp";
-import LongCard from "../components/LongCard";
+
 import ShortCard from "../components/ShortCard";
-import ColleaguesList from '../components/ColleaguesList';
-import ColleaguesSearch from '../components/ColleaguesSearch';
-import QuickSearches from '../components/QuickSearches';
-import NavButtons from '../components/NavButtons';
+import ColleaguesList from "../components/ColleaguesList";
+import ColleaguesSearch from "../components/ColleaguesSearch";
+import QuickSearches from "../components/QuickSearches";
+import NavButtons from "../components/NavButtons";
+import { Link } from "react-router-dom";
+import auth from "../utils/auth";
 
 const GET_EVENTS = gql`
-query events {
-  events {
-    date
-    name
-    description
-   culture
-    _id
+  query events {
+    events {
+      date
+      name
+      description
+      culture
+      _id
+    }
   }
- }
 `;
 
 function Home() {
-
   const { loading, error, data } = useQuery(GET_EVENTS);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :( WOE!!!</p>;
 
+  // function renderLogin(testUserLoggedIn) {
+  //   if (testUserLoggedIn) {
+  //     return (<>
+  //       <Login></Login>
+  //       <SignUp></SignUp>
+  //     </>)
+  //   } else {
+  //     return <></>
+  //   }
+  // }
 
-
-  function renderLogin(testUserLoggedIn) {
-    if (testUserLoggedIn) {
-      return (<>
-        <Login></Login>
-        <SignUp></SignUp>
-      </>)
-    } else {
-      return <></>
-    }
-  }
+  console.log(data);
 
   return (
-    <div>
-      <header>
-        <h1 class="white big">DEI CALENDAR</h1>
+    <>
+      <header className="shadow">
+        <h1 className="white big">DEI CALENDAR</h1>
       </header>
-
-      <main class="columns">
-        <nav class="m-0 p-0 container is-flex is-flex-direction-column is-align-items-center column is-one-quarter">
-          <NavButtons isUserLoggedIn={false} iLoveCake={true}></NavButtons>
-          <QuickSearches></QuickSearches>
-        </nav>
-        <main className="container is-flex is-flex-direction-column is-align-items-center">
-          <h1 class="cream">UPCOMING CULTURAL EVENTS</h1>
-          <LongCard></LongCard>
-          <ShortCard></ShortCard>
-          {renderLogin(false)}
+      {auth.loggedIn() ? (
+        <main className="">
+          <nav className="is-flex is-flex-direction-row is-justify-content-center shadow raise">
+            <NavButtons isUserLoggedIn={auth.loggedIn}></NavButtons>
+            {/* <QuickSearches></QuickSearches> */}
+          </nav>
+          <main className="is-flex is-flex-direction-column is-align-items-center">
+            <h1 className="cream">ALL UPCOMING CULTURAL EVENTS</h1>
+            <div className=" is-max-desktop is-flex is-flex-wrap-wrap is-justify-content-center full-width">
+              {data.events.map((event) => (
+                <Link to={`/events/${event._id}`}>
+                  <ShortCard eventData={event}></ShortCard>
+                </Link>
+              ))}
+            </div>
+          </main>
         </main>
-      </main>
-    </div>
+      ) : (
+        <div className="hero is-fullheight">
+          <div className="hero-body is-justify-content-center is-align-items-center">
+            <div className="is-flex is-flex-direction-column	is-justify-content-center is-align-items-center">
+              <Login className="mb-4"></Login>
+              <SignUp></SignUp>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
-
 
 // client
 //   .query({
