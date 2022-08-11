@@ -24,7 +24,7 @@ db.once("open", async () => {
   //   userData.push({ username, email, password, firstName });
   // }
 
-  const createdUsers = await User.collection.insertMany(userData);
+  // const createdUsers = await User.collection.insertMany(userData);
 
   const eventData = [];
   for (let i = 0; i < events.length; i += 1) {
