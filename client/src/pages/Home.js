@@ -27,6 +27,7 @@ const GET_EVENTS = gql`
 
 function Home() {
   const { loading, error, data } = useQuery(GET_EVENTS);
+  console.log(error);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :( WOE!!!</p>;

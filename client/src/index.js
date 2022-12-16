@@ -15,7 +15,7 @@ import ShortCard from "./components/ShortCard";
 import reportWebVitals from "./reportWebVitals";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 // const authLink = setContext((_, { headers }) => {
@@ -29,9 +29,9 @@ const httpLink = createHttpLink({
 // });
 
 const client = new ApolloClient({
- // link: authLink.concat(httpLink),
-  link: httpLink,
-  // uri: "http://localhost:3001/graphql",
+  // link: authLink.concat(httpLink),
+  // link: httpLink,
+  uri: "http://localhost:3001/graphql",
   cache: new InMemoryCache(),
 });
 
